@@ -5281,22 +5281,22 @@ end)
 -- ( TABS OF SCRIPT ) --
 local General = window:page({name = "General"})
 local Automatics = window:page({name = "Automatics"})
-local Combat = window:page({name = "Combat")}
+local Combat = window:page({name = "Combat"})
 local Visual = window:page({name = "Visual"})
 local Settings = window:page({name = "Settings"})
 
 -- ( SETTINGS TABS ) --
 local General1 = General:section({name = "--\\ General //--", side = "left", size = 100})
 local General2 = General:section({name = "--\\ Bosses //--", side = "right", size = 100})
-local General3 = General:section({name = "--\\ Stats //--", side = "right", size = 105)}
-local General4 = General:section({name = "--\\ Dungeon //--", side = "left", size = 110)}
+local General3 = General:section({name = "--\\ Stats //--", side = "right", size = 105})
+local General4 = General:section({name = "--\\ Dungeon //--", side = "left", size = 110})
 
-local Auto1 = Automatics:section({name = "--\\ First sea //--", side = "right", size = 205)}
-local Auto2 = Automatics:section({name = "--\\ Second sea //--", side = "left", size = 210)}
+local Auto1 = Automatics:section({name = "--\\ First sea //--", side = "right", size = 205})
+local Auto2 = Automatics:section({name = "--\\ Second sea //--", side = "left", size = 210})
 
-local Combat1 = Combat:section({name = "--\\ Player //--", side = "left", size = 90)}
-local Combat2 = Combat:section({name = "--\\ Esp & Fruits //--", side = "right", size = 110)}
-local Combat3 = Combat:section({name = "--\\ Teleport first sea //--", side = "left', size = 130)}
-local Combat4 = Combat:section({name = "--\\ Teleport second sea //--", side = "right", size = 135)}
+local Combat1 = Combat:section({name = "--\\ Player //--", side = "left", size = 90})
+local Combat2 = Combat:section({name = "--\\ Esp & Fruits //--", side = "right", size = 110})
+local Combat3 = Combat:section({name = "--\\ Teleport first sea //--", side = "left', size = 130})
+local Combat4 = Combat:section({name = "--\\ Teleport second sea //--", side = "right", size = 135})
 
 return library
