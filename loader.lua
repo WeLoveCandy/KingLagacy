@@ -5294,7 +5294,7 @@ local General4 = General:section({name = "--\\ Dungeon //--", side = "left", siz
 local Auto1 = Automatics:section({name = "--\\ First sea //--", side = "right", size = 205)}
 local Auto2 = Automatics:section({name = "--\\ Second sea //--", side = "left", size = 210)}
 
-local Combat1 = Combatsection({name = "--\\ Player //--", side = "left", size = 90)}
+local Combat1 = Combat:section({name = "--\\ Player //--", side = "left", size = 90)}
 local Combat2 = Combat:section({name = "--\\ Esp & Fruits //--", side = "right", size = 110)}
 local Combat3 = Combat:section({name = "--\\ Teleport first sea //--", side = "left', size = 130)}
 local Combat4 = Combat:section({name = "--\\ Teleport second sea //--", side = "right", size = 135)}
