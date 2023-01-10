@@ -5257,6 +5257,10 @@ local window =
 )
 
 local Main = window:page({name = "Main"})
+local Automatics = window:page({name = "Automatic"})
+local Combat = window:page({name = "Combat"})
+local Visual = window:page({name = "Visual"})
+local Settings = window:page({name = "Settings"})
 
 local Main_1_left = Main:section({name = "General", side = "left", size = 450})
 
