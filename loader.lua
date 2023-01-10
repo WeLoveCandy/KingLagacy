@@ -229,7 +229,7 @@ function library:new(props)
         utility.new(
         "ScreenGui",
         {
-            Name = "Cookie",
+            Name = "Kenei",
             DisplayOrder = 9999,
             ResetOnSpawn = false,
             ZIndexBehavior = "Global",
@@ -5251,52 +5251,441 @@ function sections:configloader(props)
     return configloader
 end
 
--- ( CLINET BYPASS) --
-loadstring(game:HttpGet("https://raw.githubusercontent.com/1201for/V.G_Hub_Extras/main/Universal_Client_Bypass"))()
-
-
--- ( GUI WINDOW ) --
-
 local window =
     library:new(
-    {textsize = 13.5, font = Enum.Font.RobotoMono, name = "Cookie hub", color = Color3.fromRGB(255, 5, 5)}
+    {textsize = 13.5, font = Enum.Font.RobotoMono, name = "Candy hub | Addon script", color = Color3.fromRGB(255, 3, 3)}
 )
 
--- ( LOADSTRING ) --
-repeat wait() until game:IsLoaded() wait()
+local Main = window:page({name = "Main"})
 
-game:GetService("Players").LocalPlayer.Idled:connect(function()
-game:GetService("VirtualUser"):ClickButton2(Vector2.new())
-end)
-local OldNameCall = nil
-OldNameCall = hookmetamethod(game, "__namecall", function(...)
-    local Args = {...}
-    local Self = Args[1]
-    if getnamecallmethod()=="FireServer" and tostring(Self) == "Received" or tostring(Self) == "Sent" then
-            return wait(math.huge)
-    end
-    return OldNameCall(...)
-end)
+local Main_1_left = Main:section({name = "General", side = "left", size = 450})
 
--- ( TABS OF SCRIPT ) --
-local General = window:page({name = "General"})
-local Automatics = window:page({name = "Automatics"})
-local Combat = window:page({name = "Combat"})
-local Visual = window:page({name = "Visual"})
-local Settings = window:page({name = "Settings"})
+Main_1_left:toggle(
+    {
+        name = "Toggle",
+        def = false,
+        callback = function(vu)
+            if vu == true then
+                print("True")
+            else
+                print("False")
+            end
+        end
+    }
+)
 
--- ( SETTINGS TABS ) --
-local General1 = General:section({name = "--\\ General //--", side = "left", size = 100})
-local General2 = General:section({name = "--\\ Bosses //--", side = "right", size = 100})
-local General3 = General:section({name = "--\\ Stats //--", side = "right", size = 105})
-local General4 = General:section({name = "--\\ Dungeon //--", side = "left", size = 110})
+Main_1_left:button(
+    {
+        name = "Button",
+        callback = function()
+            print("Click")
+        end
+    }
+)
 
-local Auto1 = Automatics:section({name = "--\\ First sea //--", side = "right", size = 205})
-local Auto2 = Automatics:section({name = "--\\ Second sea //--", side = "left", size = 210})
+Main_1_left:slider(
+    {
+        name = "Slider",
+        Default = 10,
+        Minimum = -10,
+        Maximum = 30,
+        Decimals = 10,
+        Suffix = "%",
+        Callback = function(vu)
+            print(vu)
+        end
+    }
+)
 
-local Combat1 = Combat:section({name = "--\\ Player //--", side = "left", size = 90})
-local Combat2 = Combat:section({name = "--\\ Esp & Fruits //--", side = "right", size = 110})
-local Combat3 = Combat:section({name = "--\\ Teleport first sea //--", side = "left', size = 130})
-local Combat4 = Combat:section({name = "--\\ Teleport second sea //--", side = "right", size = 135})
+Main_1_left:dropdown(
+    {
+        name = "Dropdown",
+        def = "",
+        max = 10,
+        options = {"Mata", "TEST"},
+        callback = function(vu)
+            print(vu)
+        end
+    }
+)
+
+Main_1_left:buttonbox(
+    {
+        name = "Buttonbox",
+        def = "",
+        max = 4,
+        options = {"yoyoyo", "yo2", "yo3", "yo4"},
+        callback = function(value)
+            print(value)
+        end
+    }
+)
+
+Main_1_left:multibox(
+    {
+        name = "Multibox",
+        def = {},
+        max = 4,
+        options = {"1", "2", "3", "4"},
+        callback = function(value)
+            print(value)
+        end
+    }
+)
+
+Main_1_left:textbox(
+    {
+        name = "Textbox",
+        def = "default text",
+        placeholder = "Textbox",
+        callback = function(value)
+        end
+    }
+)
+
+Main_1_left:keybind(
+    {
+        name = "set ui keybind",
+        def = nil,
+        callback = function(key)
+            window.key = key
+        end
+    }
+)
+
+local picker =
+    Main_1_left:colorpicker(
+    {
+        name = "color",
+        cpname = nil,
+        def = Color3.fromRGB(255, 255, 255),
+        callback = function(value)
+            print(value)
+        end
+    }
+)
+
+local Main_1_right = Main:section({name = "General", side = "right", size = 450})
+
+Main_1_right:toggle(
+    {
+        name = "Toggle",
+        def = false,
+        callback = function(vu)
+            if vu == true then
+                print("True")
+            else
+                print("False")
+            end
+        end
+    }
+)
+
+Main_1_right:button(
+    {
+        name = "Button",
+        callback = function()
+            print("Click")
+        end
+    }
+)
+
+Main_1_right:slider(
+    {
+        name = "Slider",
+        Default = 10,
+        Minimum = -10,
+        Maximum = 30,
+        Decimals = 10,
+        Suffix = "%",
+        Callback = function(vu)
+            print(vu)
+        end
+    }
+)
+
+Main_1_right:dropdown(
+    {
+        name = "Dropdown",
+        def = "",
+        max = 10,
+        options = {"Mata", "TEST"},
+        callback = function(vu)
+            print(vu)
+        end
+    }
+)
+
+Main_1_right:buttonbox(
+    {
+        name = "Buttonbox",
+        def = "",
+        max = 4,
+        options = {"yoyoyo", "yo2", "yo3", "yo4"},
+        callback = function(value)
+            print(value)
+        end
+    }
+)
+
+Main_1_right:multibox(
+    {
+        name = "Multibox",
+        def = {},
+        max = 4,
+        options = {"1", "2", "3", "4"},
+        callback = function(value)
+            print(value)
+        end
+    }
+)
+
+Main_1_right:textbox(
+    {
+        name = "Textbox",
+        def = "default text",
+        placeholder = "Textbox",
+        callback = function(value)
+        end
+    }
+)
+
+Main_1_right:keybind(
+    {
+        name = "set ui keybind",
+        def = nil,
+        callback = function(key)
+            window.key = key
+        end
+    }
+)
+
+local picker =
+    Main_1_right:colorpicker(
+    {
+        name = "color",
+        cpname = nil,
+        def = Color3.fromRGB(255, 255, 255),
+        callback = function(value)
+            print(value)
+        end
+    }
+)
+
+local Main = window:page({name = "Main 2"})
+
+local Main_1_left = Main:section({name = "General 2", side = "left", size = 450})
+
+Main_1_left:toggle(
+    {
+        name = "Toggle",
+        def = false,
+        callback = function(vu)
+            if vu == true then
+                print("True")
+            else
+                print("False")
+            end
+        end
+    }
+)
+
+Main_1_left:button(
+    {
+        name = "Button",
+        callback = function()
+            print("Click")
+        end
+    }
+)
+
+Main_1_left:slider(
+    {
+        name = "Slider",
+        Default = 10,
+        Minimum = -10,
+        Maximum = 30,
+        Decimals = 10,
+        Suffix = "%",
+        Callback = function(vu)
+            print(vu)
+        end
+    }
+)
+
+Main_1_left:dropdown(
+    {
+        name = "Dropdown",
+        def = "",
+        max = 10,
+        options = {"Mata", "TEST"},
+        callback = function(vu)
+            print(vu)
+        end
+    }
+)
+
+Main_1_left:buttonbox(
+    {
+        name = "Buttonbox",
+        def = "",
+        max = 4,
+        options = {"yoyoyo", "yo2", "yo3", "yo4"},
+        callback = function(value)
+            print(value)
+        end
+    }
+)
+
+Main_1_left:multibox(
+    {
+        name = "Multibox",
+        def = {},
+        max = 4,
+        options = {"1", "2", "3", "4"},
+        callback = function(value)
+            print(value)
+        end
+    }
+)
+
+Main_1_left:textbox(
+    {
+        name = "Textbox",
+        def = "default text",
+        placeholder = "Textbox",
+        callback = function(value)
+        end
+    }
+)
+
+Main_1_left:keybind(
+    {
+        name = "set ui keybind",
+        def = nil,
+        callback = function(key)
+            window.key = key
+        end
+    }
+)
+
+local picker =
+    Main_1_left:colorpicker(
+    {
+        name = "color",
+        cpname = nil,
+        def = Color3.fromRGB(255, 255, 255),
+        callback = function(value)
+            print(value)
+        end
+    }
+)
+
+local Main_1_right = Main:section({name = "General 2", side = "right", size = 450})
+
+Main_1_right:toggle(
+    {
+        name = "Toggle",
+        def = false,
+        callback = function(vu)
+            if vu == true then
+                print("True")
+            else
+                print("False")
+            end
+        end
+    }
+)
+
+Main_1_right:button(
+    {
+        name = "Button",
+        callback = function()
+            print("Click")
+        end
+    }
+)
+
+Main_1_right:slider(
+    {
+        name = "Slider",
+        Default = 10,
+        Minimum = -10,
+        Maximum = 30,
+        Decimals = 10,
+        Suffix = "%",
+        Callback = function(vu)
+            print(vu)
+        end
+    }
+)
+
+Main_1_right:dropdown(
+    {
+        name = "Dropdown",
+        def = "",
+        max = 10,
+        options = {"Mata", "TEST"},
+        callback = function(vu)
+            print(vu)
+        end
+    }
+)
+
+Main_1_right:buttonbox(
+    {
+        name = "Buttonbox",
+        def = "",
+        max = 4,
+        options = {"yoyoyo", "yo2", "yo3", "yo4"},
+        callback = function(value)
+            print(value)
+        end
+    }
+)
+
+Main_1_right:multibox(
+    {
+        name = "Multibox",
+        def = {},
+        max = 4,
+        options = {"1", "2", "3", "4"},
+        callback = function(value)
+            print(value)
+        end
+    }
+)
+
+Main_1_right:textbox(
+    {
+        name = "Textbox",
+        def = "default text",
+        placeholder = "Textbox",
+        callback = function(value)
+        end
+    }
+)
+
+Main_1_right:keybind(
+    {
+        name = "set ui keybind",
+        def = nil,
+        callback = function(key)
+            window.key = key
+        end
+    }
+)
+
+local picker =
+    Main_1_right:colorpicker(
+    {
+        name = "color",
+        cpname = nil,
+        def = Color3.fromRGB(255, 255, 255),
+        callback = function(value)
+            print(value)
+        end
+    }
+)
 
 return library
